@@ -2,7 +2,13 @@
 
 <div class="container mt-5">
     <h1>Hospitales</h1>
-
+    <hr />
+    <p>
+        <a asp-action="Create" asp-controller="Hospital" class="btn btn-info">
+            Nuevo Hospital
+        </a>
+    </p>
+    <hr />
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -10,6 +16,7 @@
                 <th>Direccion</th>
                 <th>Telefono</th>
                 <th>Camas</th>
+                <th>-</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +27,11 @@
                     <td>@hosp.Direccion</td>
                     <td>@hosp.Telefono</td>
                     <td>@hosp.Camas</td>
+                    <td>
+                        @Html.ActionLink("Detalles", "Details", "Hospital", new {idHospital = hosp.IdHospital}, new{@class = "btn btn-primary"})
+                        @Html.ActionLink("Eliminar", "Delete", "Hospital", new {idHospital = hosp.IdHospital}, new{@class = "btn btn-danger"})
+                        @Html.ActionLink("Modificar", "Modificar", "Hospital", new {idHospital = hosp.IdHospital}, new{@class = "btn btn-warning"})
+                    </td>
                 </tr>
             }
         </tbody>

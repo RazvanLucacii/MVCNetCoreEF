@@ -10,7 +10,12 @@ builder.Services.AddControllersWithViews();
 string connectionString = builder.Configuration.GetConnectionString("SqlHospital");
 
 builder.Services.AddTransient<RepositoryHospital>();
+builder.Services.AddTransient<RepositoryEmpleados>();
+
+
+
 builder.Services.AddDbContext<HospitalContext>(options => options.UseSqlServer(connectionString));
+
 
 var app = builder.Build();
 

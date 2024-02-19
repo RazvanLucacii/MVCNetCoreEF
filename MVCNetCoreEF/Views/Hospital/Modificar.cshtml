@@ -1,0 +1,26 @@
+﻿@model Hospital
+
+<div class="container mt-5">
+    <h1>Modificar Hospital</h1>
+
+    <p>
+        <a asp-controller="Hospital" asp-action="Index" class="btn btn-info">
+            Atras
+        </a>
+    </p>
+
+    <form method="post" asp-action="Modificar">
+        <input type="hidden" value="@Model.IdHospital" name="idHospital" />
+        <label>Nombre</label>
+        <input type="text" name="nombre" value="@Model.Nombre" class="form-control" />
+        <label>Direccion</label>
+        <input type="text" name="direccion" value="@Model.Direccion" class="form-control" />
+        <label>Telefono</label>
+        <input type="text" name="telefono" class="form-control" value="@Model.Telefono" />
+        <label>Camas</label>
+        <input type="number" name="camas" class="form-control" value="@Model.Camas" />
+        <button class="btn btn-success">
+            Modificar
+        </button>
+    </form>
+</div>
